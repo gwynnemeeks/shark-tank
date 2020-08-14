@@ -138,8 +138,17 @@ const livingStudents = () => {
   return aliveStudents;
 };
 
-// const dearlyBeloved = () =>
+const dearlyBeloved = () => {
+  const deadStudents = [];
+
+  students.forEach((student) => {
+    if (student.isDead === true) {
+      deadStudents.push(student);
+    }
+  });
+  return deadStudents;
+};
 
 const getStudents = () => students;
 
-export default { getStudents, livingStudents };
+export default { getStudents, livingStudents, dearlyBeloved };
