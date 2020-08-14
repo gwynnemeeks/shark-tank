@@ -22,7 +22,7 @@ class App extends React.Component {
     return (
     <div className="App">
       <h1>Shark Tank</h1>
-      <button className="btn btn-info"><i class="fas fa-fish"></i></button>
+      <button className="btn btn-info"><i className="fas fa-fish"></i></button>
       <SharkTank students={students} />
     </div>
     );
