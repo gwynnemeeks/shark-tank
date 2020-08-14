@@ -1,13 +1,30 @@
 import React from 'react';
+
+import SharkTank from './components/SharkTank/SharkTank';
+
+import studentData from './helpers/studentData';
+
 import './App.scss';
 
 class App extends React.Component {
+  state = {
+    students: [],
+  }
+
+  componentDidMount() {
+    const students = studentData.getStudents();
+    this.setState({ students });
+  }
+
   render() {
+    const { students } = this.state;
+
     return (
-      <div className="App">
-        <h2>The Shark Tank</h2>
-        <button className="btn btn-info"><i class="fas fa-fish"></i></button>
-      </div>
+    <div className="App">
+      <h1>Shark Tank</h1>
+      <button className="btn btn-info"><i class="fas fa-fish"></i></button>
+      <SharkTank students={students} />
+    </div>
     );
   }
 }
