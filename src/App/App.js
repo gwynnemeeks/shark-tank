@@ -21,7 +21,6 @@ class App extends React.Component {
 
   sharkAttackEvent = (e) => {
     e.preventDefault();
-    console.warn('starting shark attack');
     studentData.sharkAttack();
     const livingStudents = studentData.livingStudents();
     const deadStudents = studentData.dearlyBeloved();
@@ -30,11 +29,18 @@ class App extends React.Component {
 
   render() {
     const { livingStudents, deadStudents } = this.state;
+    const button = {
+      margin: '10px',
+    };
+    const textColor = {
+      color: 'lightgray',
+    };
 
     return (
     <div className="App">
-      <h1>Shark Tank</h1>
-      <button className="btn btn-danger" onClick={this.sharkAttackEvent}><i className="fas fa-fish">Shark Attack!</i></button>
+      <h1 style={textColor}>Shark Tank</h1>
+      <h4 style={textColor}>Dive On In!</h4>
+      <button className="btn btn-danger" style={button} onClick={this.sharkAttackEvent}><i className="fas fa-swimmer fa-2x"></i></button>
       <SharkTank livingStudents={livingStudents} sharkAttack={this.sharkAttackEvent} />
       <Graveyard deadStudents={deadStudents} />
     </div>
