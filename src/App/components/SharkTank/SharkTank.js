@@ -1,12 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import LivingStudents from '../LiveStudents/LiveStudents';
+import tankShape from '../../helpers/tankShape';
 
 class SharkTank extends React.Component {
-  render() {
-    const { students } = this.props;
+  static propTypes = {
+    livingStudents: PropTypes.arrayOf(tankShape.tankShape),
+    sharkAttack: PropTypes.func,
+  }
 
-    const livingCards = students.map((student) => (
-      <LivingStudents key={student.id} student={student} />
+  render() {
+    const { livingStudents, sharkAttack } = this.props;
+
+    const livingCards = livingStudents.map((student) => (
+      <LivingStudents key={student.id} student={student} sharkAttack={sharkAttack} />
     ));
 
     return (
