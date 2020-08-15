@@ -39,7 +39,8 @@ class App extends React.Component {
     return (
     <div className="App">
       <h1 style={textColor}>Shark Tank</h1>
-      <button className="btn btn-danger" style={button} onClick={this.sharkAttackEvent}><i className="fas fa-skull fa-2x"></i></button>
+      <h4 style={textColor}>Dive On In!</h4>
+      <button className="btn btn-danger" style={button} onClick={this.sharkAttackEvent}><i className="fas fa-swimmer fa-2x"></i></button>
       <SharkTank livingStudents={livingStudents} sharkAttack={this.sharkAttackEvent} />
       <Graveyard deadStudents={deadStudents} />
     </div>
