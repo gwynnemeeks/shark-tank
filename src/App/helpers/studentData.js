@@ -128,10 +128,26 @@ const dearlyBeloved = () => {
   return deadStudents;
 };
 
-const getStudents = () => students;
+const sharkAttack = () => {
+  const random = Math.floor(Math.random() * livingStudents().length);
+  const value = livingStudents()[random];
+  console.warn(value.id);
+  followTheLight(value.id);
+};
 
-// random student eater
+const followTheLight = (studentId) => {
+  students.forEach((response) => {
+    if (response.id === studentId) {
+      response.isDead = true;
+    }
+  });
+};
+
 // button clicks to display tank and graveyard and all students
-// double check dead stuff
 
-export default { getStudents, livingStudents, dearlyBeloved };
+export default {
+  livingStudents,
+  dearlyBeloved,
+  sharkAttack,
+  followTheLight,
+};

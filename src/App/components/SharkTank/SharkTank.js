@@ -6,14 +6,15 @@ import tankShape from '../../helpers/tankShape';
 
 class SharkTank extends React.Component {
   static propTypes = {
-    students: PropTypes.arrayOf(tankShape.tankShape),
+    livingStudents: PropTypes.arrayOf(tankShape.tankShape),
+    sharkAttack: PropTypes.func,
   }
 
   render() {
-    const { students } = this.props;
+    const { livingStudents, sharkAttack } = this.props;
 
-    const livingCards = students.map((student) => (
-      <LivingStudents key={student.id} student={student} />
+    const livingCards = livingStudents.map((student) => (
+      <LivingStudents key={student.id} student={student} sharkAttack={sharkAttack} />
     ));
 
     return (

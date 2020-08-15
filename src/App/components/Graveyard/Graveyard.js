@@ -6,18 +6,19 @@ import graveShape from '../../helpers/graveShape';
 
 class Graveyard extends React.Component {
   static propTypes = {
-    students: PropTypes.arrayOf(graveShape.tankShape),
+    deadStudents: PropTypes.arrayOf(graveShape.graveShape),
   }
 
   render() {
-    const { students } = this.props;
+    const { deadStudents } = this.props;
 
-    const deadCards = students.map((student) => (
+    const deadCards = deadStudents.map((student) => (
       <DeadStudents key={student.id} student={student} />
     ));
 
     return (
             <div>
+                <h2>Dearly Departed</h2>
                 <div className="card-columns">
                 { deadCards }
             </div>
