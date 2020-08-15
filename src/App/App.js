@@ -30,12 +30,15 @@ class App extends React.Component {
   render() {
     const { livingStudents, deadStudents } = this.state;
     const button = {
-      margin: '5px',
+      margin: '10px',
+    };
+    const textColor = {
+      color: 'lightgray',
     };
 
     return (
     <div className="App">
-      <h1>Shark Tank</h1>
+      <h1 style={textColor}>Shark Tank</h1>
       <button className="btn btn-danger" style={button} onClick={this.sharkAttackEvent}><i className="fas fa-skull fa-2x"></i></button>
       <SharkTank livingStudents={livingStudents} sharkAttack={this.sharkAttackEvent} />
       <Graveyard deadStudents={deadStudents} />
