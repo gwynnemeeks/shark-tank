@@ -7,7 +7,7 @@ class DeadStudents extends React.Component {
             <div className="card">
             <div className="card-body livingCard">
             <h5 className="card-title">{student.firstName} {student.lastName} </h5>
-            <p className="card-text">Dead</p>
+            <p className="card-text"><i className="fas fa-skull"></i></p>
         </div>
     </div>
     );
